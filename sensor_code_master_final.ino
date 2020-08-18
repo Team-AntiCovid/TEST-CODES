@@ -21,12 +21,11 @@ int lalala( int trigpin, int vcc, int gnd, int echopin)
   delayMicroseconds(10);
   int Time = pulseIn(echopin, HIGH);
   int Distance = Time * 0.034 / 2;
-  if (Distance < 60){
+  if (Distance < 60)
   return 1;
-  }
-  else {
+  else
   return 0;
-  }  
+  
 }
 
 
