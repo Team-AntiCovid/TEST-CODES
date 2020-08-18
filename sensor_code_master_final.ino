@@ -36,7 +36,7 @@ void setup() {
     digitalWrite(gnd[thisPin], LOW);
   }
   Wire.begin();
-  Serial.begin(9600);
+  
 }
 void loop() {
   // Clears the trigPin condition
