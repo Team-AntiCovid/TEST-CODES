@@ -1,3 +1,5 @@
+#include <wire.h>
+int slaveAddress=9;
 int echopin[] = {0,3,7,11}; 
 int trigpin[] = {1,4,8,12};
 int vcc[] = {5,9,13};
@@ -33,6 +35,8 @@ void setup() {
     digitalWrite(vcc[thisPin], HIGH);
     digitalWrite(gnd[thisPin], LOW);
   }
+  Wire.begin();
+  Serial.begin(9600);
 }
 void loop() {
   // Clears the trigPin condition
@@ -51,4 +55,12 @@ void loop() {
   {
     sensor_master = 1;
   }
+  
+    if( sensor_master==1)
+    {
+    Wire.beginTransmission(9);
+    Wire.write(1);
+    Wire.endTransmission();
+    }
+
 }
