@@ -62,5 +62,10 @@ void loop() {
     Wire.write(1);
     Wire.endTransmission();
     }
-
+else
+{ 
+  Wire.beginTransmission(9);
+    Wire.write(0);
+    Wire.endTransmission();
+}
 }
