@@ -26,12 +26,12 @@ int SonarSensor( int trigpin, int vcc, int gnd, int echopin)
 void setup() {
   for (int thisPin = 0; thisPin < 4; thisPin++) 
   {
-    digitalWrite(vcc, HIGH);
-    digitalWrite(gnd, LOW);
     pinMode(trigpin[thisPin], OUTPUT);
     pinMode(echopin[thisPin], INPUT);
     pinMode(vcc[thisPin], OUTPUT);
     pinMode(gnd[thisPin], OUTPUT);
+    digitalWrite(vcc, HIGH);
+    digitalWrite(gnd, LOW);
   }
 }
 void loop() {
