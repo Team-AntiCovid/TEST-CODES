@@ -1,3 +1,5 @@
+#include<Wire.h>
+int x;
 int echopin[] = {1,5,9,12};  
 int trigpin[] = {2,6,10,13};
 int vcc[] = {3,7,11};
@@ -29,6 +31,12 @@ void setup() {
     digitalWrite(vcc[thisPin], HIGH);
     digitalWrite(gnd[thisPin], LOW);
   }
+  Wire.begin(9);
+  Wire.onRecieve(receiveEvent);
+}
+void receiveEvent(int bytes)
+{
+ x=Wire.read();
 }
 void loop() {
   // Clears the trigPin condition
@@ -45,5 +53,8 @@ void loop() {
   if (sensors[4] == 1|| sensors[5] == 1|| sensors[6] ==1 || sensors[7] == 1)
   {
     sensor_slave = 1;
+  }
+  if (sensor_slave==1||x==1)
+  {
   }
 }
