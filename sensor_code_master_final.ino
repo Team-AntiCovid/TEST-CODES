@@ -7,8 +7,6 @@ int gnd[] = {2,6,10};
 int SonarSensor( int trigpin, int vcc, int gnd, int echopin)
 {
   digitalWrite(trigpin, LOW);
-  digitalWrite(vcc, HIGH);
-  digitalWrite(gnd, LOW);
   delayMicroseconds(2);
   digitalWrite(trigpin, HIGH);
   delayMicroseconds(10);
@@ -26,7 +24,10 @@ int SonarSensor( int trigpin, int vcc, int gnd, int echopin)
 
 
 void setup() {
-  for (int thisPin = 0; thisPin < 4; thisPin++) {
+  for (int thisPin = 0; thisPin < 4; thisPin++) 
+  {
+    digitalWrite(vcc, HIGH);
+    digitalWrite(gnd, LOW);
     pinMode(trigpin[thisPin], OUTPUT);
     pinMode(echopin[thisPin], INPUT);
     pinMode(vcc[thisPin], OUTPUT);
