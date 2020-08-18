@@ -30,8 +30,8 @@ void setup() {
     pinMode(echopin[thisPin], INPUT);
     pinMode(vcc[thisPin], OUTPUT);
     pinMode(gnd[thisPin], OUTPUT);
-    digitalWrite(vcc, HIGH);
-    digitalWrite(gnd, LOW);
+    digitalWrite(vcc[thisPin], HIGH);
+    digitalWrite(gnd[thisPin], LOW);
   }
 }
 void loop() {
