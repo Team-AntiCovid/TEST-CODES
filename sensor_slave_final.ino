@@ -22,7 +22,7 @@ int SonarSensor( int trigpin, int vcc, int gnd, int echopin)
 
 
 void setup() {
-  for (int thisPin = 4; thisPin < 8; thisPin++)
+  for (int thisPin = 0; thisPin < 4; thisPin++)
   {
     pinMode(trigpin[thisPin], OUTPUT);
     pinMode(echopin[thisPin], INPUT);
@@ -45,12 +45,12 @@ void loop() {
   int duration[] = {0,0,0,0};
   long distance[] = {0,0,0,0};
   
-  sensors[4] = SonarSensor(trigpin[4], vcc[4], gnd[4], echopin[4]); 
-  sensors[5] = SonarSensor(trigpin[5], vcc[5], gnd[5], echopin[5]); 
-  sensors[6] = SonarSensor(trigpin[6], vcc[6], gnd[6], echopin[6]); 
-  sensors[7] = SonarSensor(trigpin[7], vcc[7], gnd[7], echopin[7]); 
+  sensors[0] = SonarSensor(trigpin[0], vcc[0], gnd[0], echopin[0]); 
+  sensors[1] = SonarSensor(trigpin[1], vcc[1], gnd[1], echopin[1]); 
+  sensors[2] = SonarSensor(trigpin[2], vcc[2], gnd[2], echopin[2]); 
+  sensors[3] = SonarSensor(trigpin[3], vcc[3], gnd[3], echopin[3]); 
   
-  if (sensors[4] == 1|| sensors[5] == 1|| sensors[6] ==1 || sensors[7] == 1)
+  if (sensors[0] == 1|| sensors[1] == 1|| sensors[2] ==1 || sensors[3] == 1)
   {
     sensor_slave = 1;
   }
